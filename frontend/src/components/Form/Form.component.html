@@ -1,1 +1,107 @@
-<div><p>TEST</p></div>
+<div class="form_container_root">
+    <div class="form_content_root">
+        <div class="form_inputRow_root">
+            <label for="#firstname" class="form_inputRow_label">Prénom</label>
+            <input type="text" 
+                   id="firstname" 
+                   [value]="this.data?.firstname ?? ''"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#lastname" class="form_inputRow_label">Nom</label>    
+            <input type="text"
+                   id="lastname" 
+                   [value]="this.data?.lastname ?? ''"
+                   (change)="onInput('lastname', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#genderM" class="form_inputRow_label">Civilité</label>
+            <div class="form_inputRow_radio">
+                <label for="#genderM"
+                       class="form_inputRow_label"
+                       (click)="onInput('gender', 'M')"
+                >
+                    M
+                    <input type="radio" 
+                        id="genderM" 
+                        name="gender" 
+                        value="M"
+                        [checked]="this.data?.gender === 'M'" 
+                    >
+                </label>    
+            </div>
+            <div class="form_inputRow_radio">
+                <label for="#genderF" 
+                       class="form_inputRow_label" 
+                       (click)="onInput('gender', 'F')"
+                >
+                    F
+                    <input type="radio" 
+                        id="genderF" 
+                        name="gender" 
+                        value="F"
+                        [checked]="this.data?.gender === 'F'" 
+                        >
+                </label>
+            </div>
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#login" class="form_inputRow_label">Login</label>    
+            <input type="text"
+                   id="login"
+                   [value]="this.data?.login ?? ''"
+                   (change)="onInput('login', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#login" class="form_inputRow_label">Email</label>    
+            <input type="email"
+                   id="email"
+                   [value]="this.data?.email ?? ''"
+                   (change)="onInput('email', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#password" class="form_inputRow_label">Mot de passe</label>    
+            <input type="password"
+                   id="password" 
+                   [value]="this.data?.password ?? ''"
+                   (change)="onInput('password', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#cityName" class="form_inputRow_label">Ville</label>    
+            <input type="text"
+                   id="cityName" 
+                   [value]="this.data?.cityName ?? ''"
+                   (change)="onInput('cityName', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#password" class="form_inputRow_label">CP</label>    
+            <input type="text"
+                   id="zipcode" 
+                   [value]="this.data?.zipcode ?? ''"
+                   (change)="onInput('zipcode', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <div class="form_inputRow_root">
+            <label for="#password" class="form_inputRow_label">Adresse</label>
+            <input type="text"
+                   id="address"
+                   [value]="this.data?.address ?? ''"
+                   (change)="onInput('address', getValue($event))"
+                   class="form_inputRow_input" 
+            />
+        </div>
+        <button (click)="this.onClickValidate()"> Valider </button>
+    </div>
+</div>

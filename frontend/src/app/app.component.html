@@ -1,5 +1,6 @@
 <header></header>
-<my-form></my-form>
+<my-form [data]="this.data" (callback)="this.onValidate($event)"></my-form>
+<show-form-data [data]="this.submittedFormData"></show-form-data>
 <footer></footer>
 
 <router-outlet></router-outlet>
